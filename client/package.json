@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "proxy": "https://gym-slot-booking-backend.onrender.com/",
+  "proxy": "https://gym-slot-booking-backend.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

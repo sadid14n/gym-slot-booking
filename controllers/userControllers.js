@@ -36,6 +36,7 @@ const registerController = async (req, res) => {
 
 const loginController = async (req, res) => {
   try {
+    console.log("Login request received:", req.body)
     const user = await userModel.findOne({ email: req.body.email });
     if (!user) {
       return res.status(200).send({
@@ -53,6 +54,7 @@ const loginController = async (req, res) => {
     const token = JWT.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1D",
     });
+    console.log("Login successful, returning token")
     res.status(200).send({
       success: true,
       message: "Login Successfully",

@@ -14,7 +14,7 @@ app.use(express.json());
 app.use("/api/v1/user", require("./routes/userRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`.bgCyan.white);
